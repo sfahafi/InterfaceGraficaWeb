@@ -1,0 +1,100 @@
+
+form{
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.table-section{
+    width: 900px;
+    margin: 0 auto;
+}
+
+
+
+.table-section table{
+    margin: 30px auto 15px;
+    width: 100%    
+}
+
+.w-30{
+    width:29%;
+    display: inline-block;
+}
+
+.w-70{
+    width:70%;
+    display: inline-block;
+}
+
+.w-60{
+    width: 59%;
+    display: inline-block;
+}
+.w-60 input{
+    width: 76%;
+}
+.w-40{
+    width: 39%;
+    display: inline-block;
+}
+.w-33{
+    width:32.8%;
+    display: inline-block;    
+}
+.w-33 input{
+    width: 67%;
+}
+.w-50{
+    width:49%;
+    display: inline-block;
+    margin: 0 0 20px;
+}
+.w-50 input, .table-section form input{
+    width: 56%;
+}
+
+.form-row{
+    margin: 15px 0;
+}
+.form-footer{
+  text-align: center;  
+}
+.form-footer input{
+    margin: 5px 10px;
+    padding: 5px 15px;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+}
+
+select{
+    margin-left: 5px;
+    width: 65px;
+}
+
+.center-text{
+    width: fit-content;
+    margin: 0 auto 50px;
+}
+
+.text-ok{
+    color: greenyellow;
+}
+
+.text-error{
+    color: red;
+}
+
+input[name="descripcion"]{
+    width: 81%;
+}
+
+
+
+textArea{
+    display: block;
+    width: 481px;
+    margin: 5px 0 20px;
+    resize: none;
+    overflow: auto;
+}
