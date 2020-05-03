@@ -77,19 +77,9 @@ select{
     margin: 0 auto 50px;
 }
 
-.text-ok{
-    color: greenyellow;
-}
-
-.text-error{
-    color: red;
-}
-
 input[name="descripcion"]{
     width: 81%;
 }
-
-
 
 textArea{
     display: block;
