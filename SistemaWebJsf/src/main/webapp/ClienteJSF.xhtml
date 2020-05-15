@@ -24,13 +24,51 @@
                 <h:inputText id="direccion" value="#{clienteMB.cliente.direccion}"/>
                 <h:outputLabel value="Comentarios:" />
                 <h:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}"/>
-                
+
                 <h:commandButton id="guardar" value="Guardar" action="#{clienteMB.save()}"/>
                 <h:outputLabel id="mensaje" value="#{clienteMB.mensaje}"/>
-                
+
             </h:panelGrid>            
         </h:form>
-        
+
+        <h:form>
+            
+            <h:outputLabel value="Buscar Apellido: "/>
+            <h:inputText value="#{clienteMB.buscarApellido}"/>
+            <h:commandButton value="Buscar"/>
+            
+            <h:dataTable value="#{clienteMB.likeApellido}" var="c">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputLabel value="#{c.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputLabel value="#{c.nombre}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    <h:outputLabel value="#{c.apellido}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tipo Documento</f:facet>
+                    <h:outputLabel value="#{c.tipoDocumento}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero Documento</f:facet>
+                    <h:outputLabel value="#{c.numeroDocumento}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Dirección</f:facet>
+                    <h:outputLabel value="#{c.direccion}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Comentarios</f:facet>
+                    <h:outputLabel value="#{c.comentarios}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
     </h:body>
 </html>
 
