@@ -1,3 +1,6 @@
+<%@page import="ar.org.centro8.curso.java.aplicaciones.entities.Cliente"%>
+<%@page import="ar.org.centro8.curso.java.aplicaciones.dao.jdbc.ClienteRepository"%>
+<%@page import="ar.org.centro8.curso.java.aplicaciones.dao.interfaces.I_ClienteRepository"%>
 <%@page import="ar.org.centro8.curso.java.interfaces.utils.TableHTML"%>
 <%@page import="ar.org.centro8.curso.java.aplicaciones.entities.Factura"%>
 <%@page import="java.util.List"%>
@@ -10,6 +13,10 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="ar.org.centro8.curso.java.aplicaciones.enumerados.Letra"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    I_FacturaRepository fr = new FacturaRepository(Connector.getConnection());
+    I_ClienteRepository cr = new ClienteRepository(Connector.getConnection());
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,14 +54,21 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="w-70">
                     <label>ID Cliente:</label> 
-                    <input type="text" name="idCliente" style="width: 82%;"/>
+                    <select name="idCliente">
+                        <%
+                            for (Cliente c : cr.getAll()) {
+                                out.println("<option value=" + c.getId() + ">" 
+                                        + c.getNombre() + ", " + c.getApellido() + "</option>");
+                            }
+                        %>
+                    </select>
                 </div>
                 <div class="form-row">
                     <div class="w-50">
                         <label>Fecha:</label> 
-                        <input type="text" name="fecha"/>
+                        <input type="date" name="fecha"/>
                     </div>
                     <div class="w-50">
                         <label>Monto:</label> 
@@ -68,7 +82,7 @@
                 </div>
             </form>
 
-            
+
             <div class="table-section">
                 <strong>Facturas Registradas</strong>
                 <form>
@@ -77,21 +91,23 @@
                 </form>
             </div>
 
-            <%                    
-                String buscar="";
-                
-                try {                    
-                    buscar = request.getParameter("buscarFecha");                    
-                } catch (Exception e) {                    
+            <%
+                String buscar = "";
+
+                try {
+                    buscar = request.getParameter("buscarFecha");
+                } catch (Exception e) {
                 }
                 try {
-                    
-                    I_FacturaRepository fr = new FacturaRepository(Connector.getConnection());
+
                     List<Factura> lista = new ArrayList();
-                    if(buscar == null || buscar=="") lista = fr.getAll();
-                    else lista = fr.getByFecha(buscar);
+                    if (buscar == null || buscar == "") {
+                        lista = fr.getAll();
+                    } else {
+                        lista = fr.getByFecha(buscar);
+                    }
                     out.println(new TableHTML<Factura>().getTable(lista));
-                    
+
                 } catch (Exception e) {
                     System.out.println("---------------------------------------");
                     System.out.println(LocalDateTime.now());
