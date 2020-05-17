@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Mantenimiento de Articulos</title>
+    </h:head>
+    <h:body>
+        <h3>Alta de Articulos</h3>
+        
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Descripción: "/>
+                <h:inputText id="descripcion" value="#{articuloMB.articulo.descripcion}"/>
+                <h:outputLabel value="Costo: "/>
+                <h:inputText id="costo" value="#{articuloMB.articulo.costo}"/>
+                <h:outputLabel value="Precio: "/>
+                <h:inputText id="precio" value="#{articuloMB.articulo.precio}"/>
+                <h:outputLabel value="Stock: "/>
+                <h:inputText id="stock" value="#{articuloMB.articulo.stock}"/>
+                <h:outputLabel value="Stock Mínimo: "/>
+                <h:inputText id="stockMin" value="#{articuloMB.articulo.stockMin}"/>
+                <h:outputLabel value="Stock Máximo: "/>
+                <h:inputText id="stockMax" value="#{articuloMB.articulo.stockMax}"/>
+                
+                <h:commandButton id="guardar" value="Guardar" action="#{articuloMB.save()}"/>
+                <h:outputLabel id="mensaje" value="#{articuloMB.mensaje}"/>                
+            </h:panelGrid>
+        </h:form>
+        
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Buscar Descripción: "/>
+                <h:inputText value="#{articuloMB.buscarDescripcion}"/>
+                <h:commandButton value="Buscar"/>
+            </h:panelGrid>
+            
+            <h:dataTable value="#{articuloMB.likeDescripcion}" var="a">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputLabel value="#{a.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Descripción</f:facet>
+                    <h:outputLabel value="#{a.descripcion}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Costo</f:facet>
+                    <h:outputLabel value="#{a.costo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Precio</f:facet>
+                    <h:outputLabel value="#{a.precio}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Stock</f:facet>
+                    <h:outputLabel value="#{a.stock}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Stock Mínimo</f:facet>
+                    <h:outputLabel value="#{a.stockMin}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Stock Máximo</f:facet>
+                    <h:outputLabel value="#{a.stockMax}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+    </h:body>
+</html>
+

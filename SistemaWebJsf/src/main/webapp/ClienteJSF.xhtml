@@ -10,19 +10,19 @@
         <h3>Alta de Clientes</h3>
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="Nombre:" />
+                <h:outputLabel value="Nombre: " />
                 <h:inputText id="nombre" value="#{clienteMB.cliente.nombre}"/>
-                <h:outputLabel value="Apellido:" />
+                <h:outputLabel value="Apellido: " />
                 <h:inputText id="apellido" value="#{clienteMB.cliente.apellido}"/>
-                <h:outputLabel value="Tipo de Documento:" />
+                <h:outputLabel value="Tipo de Documento: " />
                 <h:selectOneMenu id="tipoDocumento" value="#{clienteMB.cliente.tipoDocumento}">
                     <f:selectItems value="#{tipoDocMB.tipoDocumento}"/>
                 </h:selectOneMenu>
-                <h:outputLabel value="Número de Documento:" />
+                <h:outputLabel value="Número de Documento: " />
                 <h:inputText id="numeroDocumento" value="#{clienteMB.cliente.numeroDocumento}"/>
-                <h:outputLabel value="Dirección:" />
+                <h:outputLabel value="Dirección: " />
                 <h:inputText id="direccion" value="#{clienteMB.cliente.direccion}"/>
-                <h:outputLabel value="Comentarios:" />
+                <h:outputLabel value="Comentarios: " />
                 <h:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}"/>
 
                 <h:commandButton id="guardar" value="Guardar" action="#{clienteMB.save()}"/>
@@ -32,10 +32,11 @@
         </h:form>
 
         <h:form>
-            
-            <h:outputLabel value="Buscar Apellido: "/>
-            <h:inputText value="#{clienteMB.buscarApellido}"/>
-            <h:commandButton value="Buscar"/>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Buscar Apellido: "/>
+                <h:inputText value="#{clienteMB.buscarApellido}"/>
+                <h:commandButton value="Buscar"/>
+            </h:panelGrid>
             
             <h:dataTable value="#{clienteMB.likeApellido}" var="c">
                 <h:column>
