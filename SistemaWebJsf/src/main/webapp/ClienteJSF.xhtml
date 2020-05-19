@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <title>Mantenimiento de Clientes</title>
     </h:head>
@@ -11,9 +12,9 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nombre: " />
-                <h:inputText id="nombre" value="#{clienteMB.cliente.nombre}"/>
+                <h:inputText id="nombre" value="#{clienteMB.cliente.nombre}" a:placeholder="Ingrese un nombre"/>
                 <h:outputLabel value="Apellido: " />
-                <h:inputText id="apellido" value="#{clienteMB.cliente.apellido}"/>
+                <h:inputText id="apellido" value="#{clienteMB.cliente.apellido}" a:placeholder="Ingrese un apellido"/>
                 <h:outputLabel value="Tipo de Documento: " />
                 <h:selectOneMenu id="tipoDocumento" value="#{clienteMB.cliente.tipoDocumento}">
                     <f:selectItems value="#{tipoDocMB.tipoDocumento}"/>
@@ -21,9 +22,9 @@
                 <h:outputLabel value="Número de Documento: " />
                 <h:inputText id="numeroDocumento" value="#{clienteMB.cliente.numeroDocumento}"/>
                 <h:outputLabel value="Dirección: " />
-                <h:inputText id="direccion" value="#{clienteMB.cliente.direccion}"/>
+                <h:inputText id="direccion" value="#{clienteMB.cliente.direccion}" a:placeholder="Ingrese una direccion"/>
                 <h:outputLabel value="Comentarios: " />
-                <h:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}"/>
+                <h:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}" a:placeholder="Agrege comentarios"/>
 
                 <h:commandButton id="guardar" value="Guardar" action="#{clienteMB.save()}"/>
                 <h:outputLabel id="mensaje" value="#{clienteMB.mensaje}"/>
