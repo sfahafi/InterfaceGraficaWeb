@@ -1,4 +1,21 @@
-C:\Users\toro\Documents\Centro8\InterfacesGraficasWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\TipoDocumento.java
-C:\Users\toro\Documents\Centro8\InterfacesGraficasWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\Letra.java
-C:\Users\toro\Documents\Centro8\InterfacesGraficasWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestConnector.java
-C:\Users\toro\Documents\Centro8\InterfacesGraficasWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\connectors\Connector.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\connectors\Connector.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ArticuloRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\Letra.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestConnector.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_FacturaRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\DetalleRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\FacturaRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_DetalleRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestDetalleRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestArticuloRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestClienteRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Factura.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\jdbc\ClienteRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ClienteRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Articulo.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\enumerados\TipoDocumento.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Detalle.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\test\TestFacturaRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\dao\interfaces\I_ArticuloRepository.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\interfaces\utils\TableHTML.java
+C:\Users\Administrador\Downloads\Interfaz Grafica Web\InterfaceGraficaWeb\SistemaWebJsp\src\main\java\ar\org\centro8\curso\java\aplicaciones\entities\Cliente.java
