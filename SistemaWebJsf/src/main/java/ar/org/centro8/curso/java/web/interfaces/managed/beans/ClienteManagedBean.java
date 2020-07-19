@@ -6,6 +6,8 @@ import ar.org.centro8.curso.java.aplicaciones.entities.Cliente;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 @Named("clienteMB")
@@ -26,6 +28,9 @@ public class ClienteManagedBean implements Serializable{
         cr.save(cliente);
         mensaje = "Se agrego el cliente id: " + cliente.getId();
         cliente = new Cliente();
+        
+        FacesContext context = FacesContext.getCurrentInstance();         
+        context.addMessage(null, new FacesMessage("Satisfactorio", mensaje));
     }
     
     public List<Cliente> getAll(){

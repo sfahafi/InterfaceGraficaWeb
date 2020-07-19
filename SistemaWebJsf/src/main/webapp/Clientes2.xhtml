@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <!-- <link rel="stylesheet" href="css/primefaces-humanity/theme.css" type="text/css"/> -->
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Nombre: "/>
+                <p:inputText id="nombre" value="#{clienteMB.cliente.nombre}"/>
+                <p:outputLabel value="Apellido: "/>
+                <p:inputText id="apellido" value="#{clienteMB.cliente.apellido}"/>
+                <p:outputLabel value="Tipo Documento: "/>
+                <p:selectOneMenu id="tipoDocumento" value="#{clienteMB.cliente.tipoDocumento}" style="width:125px">
+                    <f:selectItems value="#{tipoDocMB.tipoDocumento}"/>                    
+                </p:selectOneMenu>
+                <p:outputLabel value="Numero Documento: "/>
+                <p:inputText id="numeroDocumento" value="#{clienteMB.cliente.numeroDocumento}"/>
+                <p:outputLabel value="Direccion: "/>
+                <p:inputText id="direccion" value="#{clienteMB.cliente.direccion}"/>
+                <p:outputLabel value="Comentarios: "/>
+                <p:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}"/>
+                <p:commandButton value="Guardar" id="guardar" action="#{clienteMB.save()}" style="margin-right:20px;" ajax="false" />
+                <p:outputLabel id="mensaje" value="#{clienteMB.mensaje}"/>               
+
+            </h:panelGrid>
+
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+        </h:form>
+
+        <h:form>
+            
+            <p:outputLabel value="Buscar Apellido: "/>
+            <p:inputText value="#{clienteMB.buscarApellido}"/>
+            <p:commandButton value="Buscar" ajax="false"/>
+            
+            <p:dataTable var="c" value="#{clienteMB.likeApellido}" rows="10"
+                         paginator="true"
+                         paginatorPosition="bottom"
+                         resizableColumns="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Registros"
+                         rowsPerPageTemplate="10,20,30">
+                
+                <p:column headerText="Id">
+                    <h:outputText value="#{c.id}" />
+                </p:column>
+
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{c.nombre}" />
+                </p:column>
+
+                <p:column headerText="Apellido">
+                    <h:outputText value="#{c.apellido}" />
+                </p:column>
+
+                <p:column headerText="Tipo Documento">
+                    <h:outputText value="#{c.tipoDocumento}" />
+                </p:column>
+                
+                <p:column headerText="Numero Documento">
+                    <h:outputText value="#{c.numeroDocumento}" />
+                </p:column>
+                
+                <p:column headerText="Direccion">
+                    <h:outputText value="#{c.direccion}" />
+                </p:column>
+                
+                <p:column headerText="Comentarios">
+                    <h:outputText value="#{c.comentarios}" />
+                </p:column>
+
+<!--                <f:facet name="paginatorTopLeft">
+                    <p:commandButton type="button" icon="pi pi-refresh" />
+                </f:facet>
+
+                <f:facet name="paginatorBottomRight">
+                    <p:commandButton type="button" icon="pi pi-cloud-upload" />
+                </f:facet>-->
+
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
+
