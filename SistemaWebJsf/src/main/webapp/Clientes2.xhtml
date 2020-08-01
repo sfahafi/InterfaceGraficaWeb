@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Registro de Clientes</title>
         <!-- <link rel="stylesheet" href="css/primefaces-humanity/theme.css" type="text/css"/> -->
     </h:head>
     <h:body>
@@ -40,6 +40,9 @@
             <p:inputText value="#{clienteMB.buscarApellido}"/>
             <p:commandButton value="Buscar" ajax="false"/>
             
+            <br/>
+            <br/>
+                        
             <p:dataTable var="c" value="#{clienteMB.likeApellido}" rows="10"
                          paginator="true"
                          paginatorPosition="bottom"
@@ -47,6 +50,10 @@
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                          currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Registros"
                          rowsPerPageTemplate="10,20,30">
+                
+                <f:facet name="header">
+                    Clientes Listado
+                </f:facet>
                 
                 <p:column headerText="Id">
                     <h:outputText value="#{c.id}" />
