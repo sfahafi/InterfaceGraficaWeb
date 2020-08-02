@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro de Articulos</title>
+    </h:head>
+    <h:body style="background: #e8e8e8">
+
+        <h:form>
+            <p:breadCrumb style="margin-bottom: 15px">
+                <p:menuitem value="Categories" url="index.xhtml"/>
+                <p:menuitem value="Clientes" url="ClientePrimefaces.xhtml" style="text-decoration: unset" />
+                <p:menuitem value="Facturas" url="FacturaPrimefaces.xhtml" style="text-decoration: unset" />
+            </p:breadCrumb>
+        </h:form>
+
+        <h:form>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Descripción: "/>
+                <p:inputText id="descripcion" value="#{articuloMB.articulo.descripcion}"/>
+                <p:outputLabel value="Costo: "/>
+                <p:inputText id="costo" value="#{articuloMB.articulo.costo}"/>
+                <p:outputLabel value="Precio: " />
+                <p:inputText id="precio" value="#{articuloMB.articulo.precio}"/>
+                <p:outputLabel value="Stock: "/>
+                <p:inputText id="stock" value="#{articuloMB.articulo.stock}"/>
+                <p:outputLabel value="Stock Mínimo: "/>
+                <p:inputText id="stockMin" value="#{articuloMB.articulo.stockMin}"/>
+                <p:outputLabel value="Stock Máximo: "/>
+                <p:inputText id="stockMax" value="#{articuloMB.articulo.stockMax}"/>
+
+                <p:menuButton value="Opciones" style="margin: 20px 0">
+                    <p:menuitem value="Guardar" action="#{articuloMB.save}" ajax="false"/>
+                </p:menuButton>               
+
+            </h:panelGrid>
+
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+        </h:form>
+
+        <h:form>
+
+            <p:outputLabel value="Buscar Descripción: "/>
+            <p:inputText value="#{articuloMB.buscarDescripcion}"/>
+            <p:commandButton value="Buscar" ajax="false" style="margin-left: 15px"/>
+
+            <br/>
+            <br/>
+
+            <p:dataTable var="a" value="#{articuloMB.likeDescripcion}" rows="10"
+                         paginator="true"
+                         paginatorPosition="bottom"
+                         resizableColumns="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Registros"
+                         rowsPerPageTemplate="10,20,30">
+
+                <f:facet name="header">
+                    Artículos Listado
+                </f:facet>
+
+                <p:column headerText="Id">
+                    <h:outputText value="#{a.id}" />
+                </p:column>
+
+                <p:column headerText="Descripción">
+                    <h:outputText value="#{a.descripcion}" />
+                </p:column>
+
+                <p:column headerText="Costo">
+                    <h:outputText value="#{a.costo}" />
+                </p:column>
+
+                <p:column headerText="Precio">
+                    <h:outputText value="#{a.precio}" />
+                </p:column>
+
+                <p:column headerText="Stock">
+                    <h:outputText value="#{a.stock}" />
+                </p:column>
+
+                <p:column headerText="Stock Mínimo">
+                    <h:outputText value="#{a.stockMin}" />
+                </p:column>
+
+                <p:column headerText="Stock Máximo">
+                    <h:outputText value="#{a.stockMax}" />
+                </p:column>
+
+
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
+

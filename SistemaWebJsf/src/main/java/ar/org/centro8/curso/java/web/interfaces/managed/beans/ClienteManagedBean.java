@@ -30,7 +30,7 @@ public class ClienteManagedBean implements Serializable{
         cliente = new Cliente();
         
         FacesContext context = FacesContext.getCurrentInstance();         
-        context.addMessage(null, new FacesMessage("Satisfactorio", mensaje));
+        context.addMessage(null, new FacesMessage("Satisfactorio:", mensaje));
     }
     
     public List<Cliente> getAll(){

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro de Facturas</title>
+    </h:head>
+    <h:body style="background: #e8e8e8">
+
+        <h:form>
+            <p:breadCrumb style="margin-bottom: 15px">
+                <p:menuitem value="Categories" url="index.xhtml"/>
+                <p:menuitem value="Clientes" url="ClientePrimefaces.xhtml" style="text-decoration: unset" />
+                <p:menuitem value="Articulos" url="ArticuloPrimefaces.xhtml" style="text-decoration: unset" />
+            </p:breadCrumb>
+        </h:form>
+        
+        <h:form>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Letra: "/>
+                <p:selectOneMenu id="letra" value="#{facturaMB.factura.letra}" style="width:125px">
+                    <f:selectItems value="#{letraMB.letra}"/>                    
+                </p:selectOneMenu>
+                <p:outputLabel value="Numero: "/>
+                <p:inputText id="numero" value="#{facturaMB.factura.numero}"/>
+                <p:outputLabel value="Fecha: " />
+                <p:inputText id="fecha" value="#{facturaMB.factura.fecha}"/>
+                <p:outputLabel value="Monto: "/>
+                <p:inputText id="monto" value="#{facturaMB.factura.monto}"/>
+                <p:outputLabel value="ID Cliente: "/>
+                <p:inputText id="idCliente" value="#{facturaMB.factura.idCliente}"/>
+                <p:menuButton value="Opciones" style="margin: 20px 0">
+                    <p:menuitem value="Guardar" action="#{facturaMB.save}" ajax="false"/>
+                </p:menuButton>
+
+            </h:panelGrid>
+
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+        </h:form>
+
+        <h:form>
+            
+            <p:outputLabel value="Buscar Fecha: "/>
+            <p:inputText value="#{facturaMB.buscarFecha}"/>
+            <p:commandButton value="Buscar" ajax="false" style="margin-left: 15px"/>
+            
+            <br/>
+            <br/>
+                        
+            <p:dataTable var="f" value="#{facturaMB.likeFecha}" rows="10"
+                         paginator="true"
+                         paginatorPosition="bottom"
+                         resizableColumns="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} Registros"
+                         rowsPerPageTemplate="10,20,30">
+                
+                <f:facet name="header">
+                    Facturas Listado
+                </f:facet>
+                
+                <p:column headerText="Id">
+                    <h:outputText value="#{f.id}" />
+                </p:column>
+
+                <p:column headerText="Letra">
+                    <h:outputText value="#{f.letra}" />
+                </p:column>
+
+                <p:column headerText="Numero">
+                    <h:outputText value="#{f.numero}" />
+                </p:column>
+
+                <p:column headerText="Fecha">
+                    <h:outputText value="#{f.fecha}" />
+                </p:column>
+                
+                <p:column headerText="Monto">
+                    <h:outputText value="#{f.monto}" />
+                </p:column>
+                
+                <p:column headerText="ID Cliente">
+                    <h:outputText value="#{f.idCliente}" />
+                </p:column>
+                
+
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
+
+
+

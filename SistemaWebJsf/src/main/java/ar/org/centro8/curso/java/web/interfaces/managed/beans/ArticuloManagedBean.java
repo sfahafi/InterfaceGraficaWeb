@@ -6,6 +6,8 @@ import ar.org.centro8.curso.java.aplicaciones.entities.Articulo;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 @Named("articuloMB")
@@ -25,6 +27,9 @@ public class ArticuloManagedBean implements Serializable{
         ar.save(articulo);
         mensaje = "Se dio de alta el Articulo ID: " + articulo.getId();
         articulo = new Articulo();
+        
+        FacesContext context = FacesContext.getCurrentInstance();         
+        context.addMessage(null, new FacesMessage("Satisfactorio:", mensaje));
     }
     
     public List<Articulo> getAll(){

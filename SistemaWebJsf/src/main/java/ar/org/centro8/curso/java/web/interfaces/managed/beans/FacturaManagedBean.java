@@ -9,6 +9,8 @@ import ar.org.centro8.curso.java.aplicaciones.entities.Factura;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 @Named("facturaMB")
@@ -31,12 +33,12 @@ public class FacturaManagedBean implements Serializable{
         fr.save(factura);
         mensaje = "Se dio de alta la Factura ID: " + factura.getId();
         factura = new Factura();
+        
+        FacesContext context = FacesContext.getCurrentInstance();         
+        context.addMessage(null, new FacesMessage("Satisfactorio:", mensaje));
     }
-    
-//    public List<Cliente> getIdCliente(){
-//        return cliente.getNombre()+", "+cliente.getApellido();
-//    }
-//    
+   
+   
     public List<Factura> getAll(){
         return fr.getAll();
     }
