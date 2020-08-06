@@ -15,7 +15,7 @@ public class ClienteRepository implements I_ClienteRepository{
     public void save(Cliente cliente) {
         if (cliente == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "insert into cliente"
+                "insert into clientes"
                         + "(nombre,apellido,tipoDocumento,numeroDocumento,direccion,comentarios)"
                         + "values (?,?,?,?,?,?)",
                 PreparedStatement.RETURN_GENERATED_KEYS)
@@ -37,7 +37,7 @@ public class ClienteRepository implements I_ClienteRepository{
     public void remove(Cliente cliente) {
         if (cliente == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "delete from cliente where id = ?")
+                "delete from clientes where id = ?")
             ){
             
             ps.setInt(1, cliente.getId());
@@ -49,7 +49,7 @@ public class ClienteRepository implements I_ClienteRepository{
     public void update(Cliente cliente) {
         if (cliente == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "update cliente set nombre=?, apellido=?, tipoDocumento=?,"
+                "update clientes set nombre=?, apellido=?, tipoDocumento=?,"
                         + "numeroDocumento=?, direccion=?, comentarios=? "
                         + "where id=?")
             ){
@@ -69,7 +69,7 @@ public class ClienteRepository implements I_ClienteRepository{
     public List<Cliente> getAll() {
         List<Cliente> list = new ArrayList();
         try (ResultSet rs = conn.createStatement().executeQuery(
-                "select * from cliente")
+                "select * from clientes")
             ){
             
             while (rs.next()){
