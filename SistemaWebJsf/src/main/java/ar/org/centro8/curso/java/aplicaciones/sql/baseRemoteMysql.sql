@@ -6,7 +6,7 @@ drop table if exists articulos;
 drop table if exists clientes;
 
 
-create table cliente(
+create table clientes(
     id int auto_increment primary key,
     nombre varchar(20) not null,
     apellido varchar(20) not null,
@@ -16,11 +16,11 @@ create table cliente(
     comentarios varchar(250)
 );
 
-alter table cliente
+alter table clientes
     add constraint I_Cliente_Tipo_DNI
     unique(tipoDocumento,numeroDocumento); -- evita que se coloquen dos nemuros repetidos
 
-create table articulo(
+create table articulos(
     id int auto_increment primary key,
     descripcion varchar(50) not null,
     costo float,
@@ -30,7 +30,7 @@ create table articulo(
     stockMax int
 );
 
-create table factura(
+create table facturas(
     id int auto_increment primary key,
     letra enum('A','B','C') not null,
     numero int not null,
@@ -39,16 +39,16 @@ create table factura(
     idCliente int not null
 );
 
-alter table factura
-    add constraint I_Factura_Letra_Numero
+alter table facturas
+    add constraint I_Facturas_Letra_Numero
     unique(letra,numero);
 
-alter table factura
-    add constraint FK_Factura_Clientes_id
+alter table facturas
+    add constraint FK_Facturas_Clientes_id
     foreign key(idCliente)
     references clientes(id);
 
-create table detalle(
+create table detalles(
     idFactura int not null,
     idArticulo int not null,
     precio float not null,
@@ -56,12 +56,12 @@ create table detalle(
     primary key(idFactura,idArticulo)
 );
 
-alter table detalle
-    add constraint FK_Detalle_IdFactura
+alter table detalles
+    add constraint FK_Detalles_IdFactura
     foreign key(idFactura)
     references facturas(id);
 
-alter table detalle
-    add constraint FK_Detalle_IdArticulo
+alter table detalles
+    add constraint FK_Detalles_IdArticulo
     foreign key(idArticulo)
     references articulos(id);
