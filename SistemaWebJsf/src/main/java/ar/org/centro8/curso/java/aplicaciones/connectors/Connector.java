@@ -5,15 +5,15 @@ public class Connector {
     private static String driver="com.mysql.cj.jdbc.Driver";
     private static String vendor="mysql"; // vendor = fabricante
     //private static String server="localhost";
-    private static String server="remotemysql.com";
+    private static String server="db4free.net";
     private static String port="3306";
     //private static String database="negocioWeb";
-    private static String database="S36WIHK7x4";
+    private static String database="cursoweb";
     private static String params="";
     //private static String user="root";
-    private static String user="S36WIHK7x4";
+    private static String user="javawebdb";
     //private static String pass="";
-    private static String pass="s8Wp83GabH";
+    private static String pass="4956Java";
     private static String url="jdbc:"+vendor+"://"+server+":"+port+"/"+database+params;
     private static Connection conn=null;
     private Connector(){}
