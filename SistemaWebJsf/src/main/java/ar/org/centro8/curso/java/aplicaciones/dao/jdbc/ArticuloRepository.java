@@ -14,7 +14,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
     public void save(Articulo articulo) {
         if (articulo == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "insert into articulos"
+                "insert into articulo"
                         + "(descripcion,costo,precio,stock,stockMin,stockMax)"
                         + "values (?,?,?,?,?,?)",
                 PreparedStatement.RETURN_GENERATED_KEYS)
@@ -36,7 +36,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
     public void remove(Articulo articulo) {
         if (articulo == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "delete from articulos where id=?")
+                "delete from articulo where id=?")
             ){
             
             ps.setInt(1, articulo.getId());
@@ -48,7 +48,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
     public void update(Articulo articulo) {
         if (articulo == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "update articulos set descripcion=?, costo=?, precio=?,"
+                "update articulo set descripcion=?, costo=?, precio=?,"
                         + "stock=?, stockMin=?, stockMax=? where id=?")
             ){
             
@@ -66,7 +66,7 @@ public class ArticuloRepository implements I_ArticuloRepository{
     public List<Articulo> getAll() {
         List<Articulo> list = new ArrayList();
         try (ResultSet rs = conn.createStatement().executeQuery(
-                "select * from articulos")
+                "select * from articulo")
             ){
             
             while (rs.next()){

@@ -15,7 +15,7 @@ public class FacturaRepository implements I_FacturaRepository{
     public void save(Factura factura) {
         if (factura == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "insert into facturas (letra,numero,fecha,monto,idCliente)"
+                "insert into factura (letra,numero,fecha,monto,idCliente)"
                         + "values (?,?,?,?,?)",
                 PreparedStatement.RETURN_GENERATED_KEYS)
             ){
@@ -35,7 +35,7 @@ public class FacturaRepository implements I_FacturaRepository{
     public void remove(Factura factura) {
         if (factura == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "delete from facturas where id=?")
+                "delete from factura where id=?")
             ){
             
             ps.setInt(1, factura.getId());
@@ -47,7 +47,7 @@ public class FacturaRepository implements I_FacturaRepository{
     public void update(Factura factura) {
         if (factura == null) return;
         try (PreparedStatement ps = conn.prepareStatement(
-                "update facturas set letra=?, numero=?, fecha=?, monto=?,"
+                "update factura set letra=?, numero=?, fecha=?, monto=?,"
                         + "idCliente=? where id=?")
             ){
             
@@ -65,7 +65,7 @@ public class FacturaRepository implements I_FacturaRepository{
     public List<Factura> getAll() {
         List<Factura> list = new ArrayList();
         try (ResultSet rs = conn.createStatement().executeQuery(
-                "select * from facturas")
+                "select * from factura")
             ){
             
             while(rs.next()){

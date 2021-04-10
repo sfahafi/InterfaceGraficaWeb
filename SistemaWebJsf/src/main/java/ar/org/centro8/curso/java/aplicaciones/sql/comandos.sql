@@ -1,8 +1,8 @@
 use negocioWeb;
 use S36WIHK7x4;
-select * from clientes;
-select * from facturas;
-select * from articulos;
+select * from cliente;
+select * from factura;
+select * from articulo;
 select * from detalles;
 
 describe cliente;
